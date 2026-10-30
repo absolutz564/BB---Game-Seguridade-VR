@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730d1fad53eb75d4ea0ef9fbb7d2f55b, type: 3}
+  m_Name: RISCO_risco_PrincipioIncendio_03
+  m_EditorClassIdentifier: AmbienteBB.VR::AmbienteBB.VR.DadosRisco
+  chaveObjeto: risco_PrincipioIncendio_03
+  numeroCard: 01
+  icone: {fileID: 21300000, guid: 15e67c2e94eeb7648a59cc706f96def6, type: 3}
+  titulo: "Princ\xEDpio de inc\xEAndio"
+  textoRisco: "A frigideira esquenta demais e come\xE7a a pegar fogo."
+  nomeProduto: Seguro Residencial
+  ajudas:
+  - cobertura: "Inc\xEAndio"
+    texto: "Garante os danos materiais ao im\xF3vel causados por inc\xEAndio, queda
+      de raio ou fuma\xE7a."
+  aHomologar: 0
+  textoSeguro: "A cobertura Inc\xEAndio do Seguro Residencial garante os danos materiais
+    ao im\xF3vel causados por inc\xEAndio, queda de raio ou fuma\xE7a."
+  coberturas: "Inc\xEAndio"
+  produto: 0
+  ativoNoDesafio: 1
+  categoria: 3
+  ePet: 0

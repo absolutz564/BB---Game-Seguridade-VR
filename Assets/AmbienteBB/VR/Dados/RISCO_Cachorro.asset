@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730d1fad53eb75d4ea0ef9fbb7d2f55b, type: 3}
+  m_Name: RISCO_Cachorro
+  m_EditorClassIdentifier: AmbienteBB.VR::AmbienteBB.VR.DadosRisco
+  chaveObjeto: Cachorro
+  numeroCard: 10
+  icone: {fileID: 21300000, guid: 4ef0695b41f399a4496a348176768da3, type: 3}
+  titulo: Viagem sem lugar para o pet
+  textoRisco: "A viagem da fam\xEDlia est\xE1 chegando e o cachorro n\xE3o tem onde
+    ficar."
+  nomeProduto: Seguro Vida
+  ajudas:
+  - cobertura: Hospedagem Pet
+    texto: "Hotel para o pet enquanto voc\xEA viaja, com agendamento pr\xE9vio de
+      48h \xFAteis."
+  - cobertura: "Consulta veterin\xE1ria"
+    texto: Consulta de rotina ou para avaliar sintomas do pet.
+  aHomologar: 1
+  textoSeguro: "Com o Seguro de Vida da BB Seguros voc\xEA conta com a Assist\xEAncia
+    Pet: consulta veterin\xE1ria e hospedagem do pet quando precisar."
+  coberturas: "Consulta veterin\xE1ria \u2022 Hospedagem pet"
+  produto: 1
+  ativoNoDesafio: 1
+  categoria: 7
+  ePet: 1

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730d1fad53eb75d4ea0ef9fbb7d2f55b, type: 3}
+  m_Name: RISCO_risco_Goteira_07
+  m_EditorClassIdentifier: AmbienteBB.VR::AmbienteBB.VR.DadosRisco
+  chaveObjeto: risco_Goteira_07
+  numeroCard: 03
+  icone: {fileID: 21300000, guid: b118a1a2db7a65241aaed7efd6073c93, type: 3}
+  titulo: Goteira no teto
+  textoRisco: "Mancha no teto e po\xE7as no ch\xE3o: a \xE1gua est\xE1 entrando pela
+    laje."
+  nomeProduto: Seguro Residencial
+  ajudas:
+  - cobertura: "Danos por \xE1gua"
+    texto: "Protege o im\xF3vel contra \xE1gua de chuva e temporal."
+  - cobertura: Casa em apuros
+    texto: "Faz a cobertura provis\xF3ria do telhado."
+  aHomologar: 0
+  textoSeguro: "A cobertura Danos por \xC1gua do Seguro Residencial protege o im\xF3vel
+    contra \xE1gua de chuva e temporal. E a Casa em Apuros faz cobertura provis\xF3ria
+    de telhados."
+  coberturas: "Danos por \xE1gua \u2022 Casa em apuros (cobertura provis\xF3ria de
+    telhados)"
+  produto: 0
+  ativoNoDesafio: 1
+  categoria: 1
+  ePet: 0

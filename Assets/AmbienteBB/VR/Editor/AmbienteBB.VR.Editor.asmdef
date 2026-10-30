@@ -1,0 +1,36 @@
+{
+    "name": "AmbienteBB.VR.Editor",
+    "rootNamespace": "AmbienteBB.VR.Editor",
+    "references": [
+        "AmbienteBB.VR",
+        "Unity.InputSystem",
+        "Unity.TextMeshPro",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.XR.Management",
+        "Unity.XR.Management.Editor",
+        "Unity.XR.OpenXR",
+        "Unity.XR.OpenXR.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.xr.openxr",
+            "expression": "1.0.0",
+            "define": "BB_OPENXR"
+        },
+        {
+            "name": "com.unity.xr.management",
+            "expression": "4.0.0",
+            "define": "BB_XR_MANAGEMENT"
+        }
+    ],
+    "noEngineReferences": false
+}

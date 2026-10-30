@@ -1,0 +1,255 @@
+{
+  "formato": "PNG 1280 px de largura, 1x. Exibir a ~1,5 m ocupando ~25° de largura.",
+  "cards": [
+    {
+      "n": "01",
+      "arquivo_risco": "01-risco.png",
+      "arquivo_protegido": "01-protegido.png",
+      "nome": "Princípio de incêndio",
+      "descricao": "A frigideira esquenta demais e começa a pegar fogo.",
+      "produto": "Seguro Residencial",
+      "ajudas": [
+        {
+          "cobertura": "Incêndio",
+          "texto": "Garante os danos materiais ao imóvel causados por incêndio, queda de raio ou fumaça."
+        }
+      ],
+      "a_homologar": false
+    },
+    {
+      "n": "02",
+      "arquivo_risco": "02-risco.png",
+      "arquivo_protegido": "02-protegido.png",
+      "nome": "Janela vulnerável",
+      "descricao": "Vidro trincado e trinco quebrado. A janela não fecha e deixa a casa exposta.",
+      "produto": "Seguro Residencial",
+      "ajudas": [
+        {
+          "cobertura": "Casa segura",
+          "texto": "Instala telas de proteção e películas."
+        },
+        {
+          "cobertura": "Casa em apuros",
+          "texto": "Chaveiro quando você precisar."
+        }
+      ],
+      "a_homologar": false
+    },
+    {
+      "n": "03",
+      "arquivo_risco": "03-risco.png",
+      "arquivo_protegido": "03-protegido.png",
+      "nome": "Goteira no teto",
+      "descricao": "Mancha no teto e poças no chão: a água está entrando pela laje.",
+      "produto": "Seguro Residencial",
+      "ajudas": [
+        {
+          "cobertura": "Danos por água",
+          "texto": "Protege o imóvel contra água de chuva e temporal."
+        },
+        {
+          "cobertura": "Casa em apuros",
+          "texto": "Faz a cobertura provisória do telhado."
+        }
+      ],
+      "a_homologar": false
+    },
+    {
+      "n": "04",
+      "arquivo_risco": "04-risco.png",
+      "arquivo_protegido": "04-protegido.png",
+      "nome": "Alagamento no banheiro",
+      "descricao": "O ralo entupiu e a água tomou conta do piso.",
+      "produto": "Seguro Residencial",
+      "ajudas": [
+        {
+          "cobertura": "Danos por água",
+          "texto": "Protege contra alagamento."
+        },
+        {
+          "cobertura": "Casa em apuros",
+          "texto": "Faz o desentupimento."
+        }
+      ],
+      "a_homologar": false
+    },
+    {
+      "n": "05",
+      "arquivo_risco": "05-risco.png",
+      "arquivo_protegido": "05-protegido.png",
+      "nome": "Vazamento de gás",
+      "descricao": "O aquecedor a gás está vazando. Sem manutenção, o risco só aumenta.",
+      "produto": "Seguro Residencial",
+      "ajudas": [
+        {
+          "cobertura": "Casa segura",
+          "texto": "Inclui manutenção de aquecedor a gás."
+        },
+        {
+          "cobertura": "Incêndio",
+          "texto": "Protege o imóvel se o pior acontecer."
+        }
+      ],
+      "a_homologar": false
+    },
+    {
+      "n": "06",
+      "arquivo_risco": "06-risco.png",
+      "arquivo_protegido": "06-protegido.png",
+      "nome": "Vazamento de água",
+      "descricao": "A porca do sifão está solta, pinga água e já formou uma poça no gabinete da pia.",
+      "produto": "Seguro Residencial",
+      "ajudas": [
+        {
+          "cobertura": "Casa em apuros",
+          "texto": "Encanador quando você precisar."
+        },
+        {
+          "cobertura": "Casa limpa",
+          "texto": "Limpeza de ralo, sifão e caixa de gordura."
+        }
+      ],
+      "a_homologar": true
+    },
+    {
+      "n": "07",
+      "arquivo_risco": "07-risco.png",
+      "arquivo_protegido": "07-protegido.png",
+      "nome": "Risco elétrico",
+      "descricao": "Tomada sobrecarregada, cheia de aparelhos ligados ao mesmo tempo.",
+      "produto": "Seguro Residencial",
+      "ajudas": [
+        {
+          "cobertura": "Danos elétricos",
+          "texto": "Cobre danos por curto-circuito e variações de tensão."
+        },
+        {
+          "cobertura": "Casa em apuros",
+          "texto": "Eletricista quando você precisar."
+        }
+      ],
+      "a_homologar": true
+    },
+    {
+      "n": "08",
+      "arquivo_risco": "08-risco.png",
+      "arquivo_protegido": "08-protegido.png",
+      "nome": "Ar-condicionado sem manutenção",
+      "descricao": "O filtro está sujo e o aparelho já não gela como antes.",
+      "produto": "Seguro Residencial",
+      "ajudas": [
+        {
+          "cobertura": "Casa limpa",
+          "texto": "Limpeza de ar-condicionado."
+        },
+        {
+          "cobertura": "Casa funcionando",
+          "texto": "Conserto de ar-condicionado."
+        }
+      ],
+      "a_homologar": true
+    },
+    {
+      "n": "09",
+      "arquivo_risco": "09-risco.png",
+      "arquivo_protegido": "09-protegido.png",
+      "nome": "Insetos na cozinha",
+      "descricao": "Manutenção acumulada: a casa está pedindo ajuda.",
+      "produto": "Seguro Residencial",
+      "ajudas": [
+        {
+          "cobertura": "Casa sem insetos",
+          "texto": "Desinsetização nas áreas construídas da casa."
+        }
+      ],
+      "a_homologar": true
+    },
+    {
+      "n": "10",
+      "arquivo_risco": "10-risco.png",
+      "arquivo_protegido": "10-protegido.png",
+      "nome": "Viagem sem lugar para o pet",
+      "descricao": "A viagem da família está chegando e o cachorro não tem onde ficar.",
+      "produto": "Seguro Vida",
+      "ajudas": [
+        {
+          "cobertura": "Hospedagem Pet",
+          "texto": "Hotel para o pet enquanto você viaja, com agendamento prévio de 48h úteis."
+        },
+        {
+          "cobertura": "Consulta veterinária",
+          "texto": "Consulta de rotina ou para avaliar sintomas do pet."
+        }
+      ],
+      "a_homologar": true
+    },
+    {
+      "n": "11",
+      "nome": "Porta arrombada",
+      "descricao": "A porta foi forçada e a fechadura não tranca mais.",
+      "produto": "Seguro Residencial",
+      "homologar": true,
+      "ajudas": [
+        {
+          "cobertura": "Casa em apuros",
+          "texto": "Chaveiro quando você precisar."
+        },
+        {
+          "cobertura": "Casa segura",
+          "texto": "Instala fechadura eletrônica e faz instalações em portas."
+        }
+      ],
+      "arquivos": [
+        "11-risco.png",
+        "11-protegido.png"
+      ]
+    },
+    {
+      "n": "12",
+      "nome": "Lâmpada piscando",
+      "descricao": "A luz pisca sem parar. Pode ser problema na fiação.",
+      "produto": "Seguro Residencial",
+      "homologar": true,
+      "ajudas": [
+        {
+          "cobertura": "Danos elétricos",
+          "texto": "Cobre a fiação e danos por variações de tensão."
+        },
+        {
+          "cobertura": "Casa em apuros",
+          "texto": "Eletricista quando você precisar."
+        }
+      ],
+      "arquivos": [
+        "12-risco.png",
+        "12-protegido.png"
+      ]
+    },
+    {
+      "n": "13",
+      "nome": "Chuveiro com defeito",
+      "descricao": "O chuveiro não esquenta e a resistência queimou.",
+      "produto": "Seguro Residencial",
+      "homologar": true,
+      "ajudas": [
+        {
+          "cobertura": "Casa em apuros",
+          "texto": "Eletricista e encanador quando você precisar."
+        },
+        {
+          "cobertura": "Danos elétricos",
+          "texto": "Cobre danos por curto-circuito e variações de tensão."
+        }
+      ],
+      "arquivos": [
+        "13-risco.png",
+        "13-protegido.png"
+      ]
+    }
+  ],
+  "final": "14-final.png",
+  "modelo": [
+    "00-modelo-risco.png",
+    "00-modelo-protegido.png"
+  ]
+}
