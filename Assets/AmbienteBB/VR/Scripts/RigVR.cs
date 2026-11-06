@@ -30,6 +30,17 @@ namespace AmbienteBB.VR
         public float raioCorpo = 0.2f;
         public LayerMask camadasColisao = ~0;
 
+        [Header("Limites da casa")]
+        [Tooltip("Impede que a cabeça atravesse paredes, portas e janelas, seja pelo analógico ou andando de verdade no espaço físico.")]
+        public bool impedirAtravessarParedes = true;
+        [Tooltip("Se a pessoa for parar fora da casa (sem teto acima da cabeça), volta sozinha para o último ponto dentro. " +
+                 "Desliga sozinho se o ponto de início não tiver teto com colisor.")]
+        public bool voltarSeSairDaCasa = true;
+        [Tooltip("Até que altura acima da cabeça procurar o teto, em metros.")]
+        public float alturaMaximaTeto = 8f;
+        [Tooltip("Segundos fora da casa antes de voltar sozinho.")]
+        public float tempoForaAntesDeVoltar = 0.5f;
+
         [Header("Giro em passos (analógico direito)")]
         public float anguloGiro = 45f;
         [Range(0.3f, 0.95f)] public float zonaMorta = 0.7f;
@@ -41,8 +52,17 @@ namespace AmbienteBB.VR
         bool giroEmCurso;
         readonly List<InputAction> acoes = new List<InputAction>();
 
+        Vector3 ultimaCabecaValida;
+        bool temCabecaValida;
+        bool tetoVerificado;
+        bool tetoDisponivel;
+        float tempoFora;
+
         void Awake()
         {
+            // Paredes e vidros finos costumam ter colisor de uma face só: sem isso, o raio "vê" a parede de um lado
+            // e atravessa do outro (foi assim que deu para sair da casa e não conseguir voltar).
+            Physics.queriesHitBackfaces = true;
             CriarRastreadores();
             CriarAcoesGiro();
         }
@@ -169,6 +189,79 @@ namespace AmbienteBB.VR
             transform.position += passo;
         }
 
+        // Roda depois do rastreamento da cabeça. Garante que a cabeça não cruzou nenhuma parede desde o último quadro
+        // e que continua dentro da casa; se não, devolve a pessoa para o último ponto válido.
+        void LateUpdate()
+        {
+            if (!ModoVR || cameraVR == null) return;
+            Vector3 cab = cameraVR.transform.position;
+
+            if (!tetoVerificado)
+            {
+                tetoVerificado = true;
+                tetoDisponivel = DentroDaCasa(cab);
+                if (voltarSeSairDaCasa && !tetoDisponivel)
+                    Debug.LogWarning("[RigVR] Não encontrei teto com colisor acima do ponto de início; a volta automática para dentro da casa ficou desligada.");
+            }
+            if (!temCabecaValida)
+            {
+                ultimaCabecaValida = cab;
+                temCabecaValida = true;
+                return;
+            }
+
+            if (impedirAtravessarParedes && CruzaParede(ultimaCabecaValida, cab))
+            {
+                Deslocar(ultimaCabecaValida - cab);
+                return;
+            }
+            if (voltarSeSairDaCasa && tetoDisponivel && !DentroDaCasa(cab))
+            {
+                tempoFora += Time.deltaTime;
+                if (tempoFora >= tempoForaAntesDeVoltar)
+                {
+                    tempoFora = 0f;
+                    Deslocar(ultimaCabecaValida - cab);
+                    Debug.Log("[RigVR] Saiu da casa; voltando para o último ponto dentro.");
+                }
+                return; // fora da casa não vira ponto válido
+            }
+            tempoFora = 0f;
+            ultimaCabecaValida = cab;
+        }
+
+        // Só o movimento horizontal conta (agachar ou levantar não é atravessar parede), na altura atual da cabeça.
+        bool CruzaParede(Vector3 de, Vector3 para)
+        {
+            de.y = para.y;
+            Vector3 d = para - de;
+            float dist = d.magnitude;
+            if (dist < 0.0005f) return false;
+            Vector3 dir = d / dist;
+            const float folga = 0.1f; // a cabeça não encosta no plano da parede
+            return Physics.Raycast(de, dir, dist + folga, camadasColisao, QueryTriggerInteraction.Ignore)
+                || Physics.Raycast(para + dir * folga, -dir, dist + folga, camadasColisao, QueryTriggerInteraction.Ignore);
+        }
+
+        bool DentroDaCasa(Vector3 cabeca)
+        {
+            return Physics.Raycast(cabeca, Vector3.up, alturaMaximaTeto, camadasColisao, QueryTriggerInteraction.Ignore);
+        }
+
+        // Move o rig só no plano do chão (a altura real da pessoa não muda).
+        void Deslocar(Vector3 delta)
+        {
+            delta.y = 0f;
+            transform.position += delta;
+        }
+
+        // Depois de um deslocamento intencional (teleporte, reinício), o novo ponto vira a referência.
+        void RedefinirReferencia()
+        {
+            temCabecaValida = false;
+            tempoFora = 0f;
+        }
+
         public void Girar(float graus)
         {
             Vector3 pivo = cameraVR != null ? cameraVR.transform.position : transform.position;
@@ -190,11 +283,13 @@ namespace AmbienteBB.VR
             Vector3 posCam = cameraVR != null ? cameraVR.transform.position : transform.position;
             Vector3 delta = new Vector3(posCam.x - transform.position.x, 0f, posCam.z - transform.position.z);
             transform.position = new Vector3(destinoChao.x - delta.x, destinoChao.y, destinoChao.z - delta.z);
+            RedefinirReferencia();
         }
 
         public void ReposicionarNoInicio(Vector3 posicao, Quaternion rotacao)
         {
             transform.SetPositionAndRotation(posicao, rotacao);
+            RedefinirReferencia();
             if (ModoVR)
             {
                 Teleportar(posicao);

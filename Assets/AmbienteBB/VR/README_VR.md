@@ -14,6 +14,10 @@ Referência de tom e cores: "BB Play na proteção" (https://bb-play-exp.web.app
 Teste sem headset: aperte Play. O `Jogador_Teste` assume (WASD + mouse; clique esquerdo ou espaço = gatilho; R segurado = reiniciar).
 Teste com headset no editor: Quest Link ligado antes do Play (o loader OpenXR também fica ativo no Standalone).
 
+## Limites da casa
+
+O `XR_Rig` impede que a cabeça atravesse paredes, portas e janelas, tanto pelo analógico quanto andando de verdade no espaço físico (a pessoa é empurrada de volta). Se mesmo assim ela for parar fora da casa (sem teto com colisor acima da cabeça), volta sozinha ao último ponto dentro em 0,5 s. Campos: `impedirAtravessarParedes`, `voltarSeSairDaCasa`, `alturaMaximaTeto`, `tempoForaAntesDeVoltar`. O projeto liga `Physics.queriesHitBackfaces` porque paredes e vidros finos têm colisor de uma face só.
+
 ## Cards (design do Danilo)
 
 Os cards seguem os modelos em `Assets/Sprites/cards`, mas são montados com elementos de UI (não com os PNGs, que têm texto sobreposto):
